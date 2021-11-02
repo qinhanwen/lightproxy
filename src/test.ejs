@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LightProxy</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./monaco.css">
+    <script src="./monaco.js"></script>
+    <script src='http://localhost:8001/time-dog.umd.js'></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      new TimeDog({
+        target: document.body,
+        domain: 'http://127.0.0.1:7001',
+        infoPageDomain: 'http://127.0.0.1:3000'
+      });
+    </script>
+  </body>
+</html>

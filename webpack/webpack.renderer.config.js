@@ -72,7 +72,7 @@ module.exports = merge.smart(baseConfig, {
         }),
         new HtmlWebpackPlugin({
             title: pkg.title,
-            template: path.resolve(__dirname, '../src/index.ejs'),
+            template: path.resolve(__dirname, `../src/${devMode ? 'test' : 'index'}.ejs`),
         }),
         new CopyPlugin([
             { from: './node_modules/@timkendrick/monaco-editor/dist/external/index.js', to: './monaco.js' },
