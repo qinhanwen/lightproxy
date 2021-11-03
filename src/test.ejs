@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LightProxy</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./monaco.css">
-    <script src="./monaco.js"></script>
-    <script src='http://localhost:8001/time-dog.umd.js'></script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script>
-      new TimeDog({
-        target: document.body,
-        domain: 'http://127.0.0.1:7001',
-        infoPageDomain: 'http://127.0.0.1:3000'
-      });
-    </script>
-  </body>
+    <head>
+        <title>LightProxy</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="./monaco.css" />
+        <script src="./monaco.js"></script>
+        <script src="http://9.134.117.4/time-dog-pc.umd.js"></script>
+        <!-- <script src="https://hvanqin.xyz/time-dog-pc.umd.js"></script> -->
+        <!-- <script src="https://mnt.woa.com/rrproxy/time-dog-pc.umd.js"></script> -->
+        <script src='http://localhost:8001/time-dog.umd.js'></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            new TimeDog({
+                target: document.body,
+                // domain: 'http://9.134.117.4',
+                // infoPageDomain: 'http://9.134.117.4',
+                
+                // domain: 'https://hvanqin.xyz',
+                // infoPageDomain: 'https://hvanqin.xyz',
+
+                // domain: 'https://mnt.woa.com/rrproxy',
+                // infoPageDomain: 'https://mnt.woa.com/rrproxy',
+
+                domain: 'http://127.0.0.1:7001',
+                infoPageDomain: 'http://127.0.0.1:3000'
+            });
+        </script>
+    </body>
 </html>
