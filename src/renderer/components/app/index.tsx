@@ -86,6 +86,7 @@ export const App = () => {
 
     const onClickItemBuilder = useMemo(() => {
         return (index: number) => () => {
+            window.location.hash = `${index}`;
             setSelectedPanelIndex(index);
         };
     }, []);

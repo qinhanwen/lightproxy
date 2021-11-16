@@ -54,3 +54,11 @@ ReactDOM.render(
     </AppContainer>,
     document.getElementById('app'),
 );
+
+window.onkeydown = function(e){
+    var ev: any = window.event || e;
+    var code = ev.keyCode || ev.which;
+    if(code == 82 && (ev.metaKey || ev.ctrlKey)){
+        return false
+    }
+}

@@ -1,0 +1,1 @@
+根目录下的 index.js 是单独维护的 whistle/biz/webui/htdocs/js/index.js
