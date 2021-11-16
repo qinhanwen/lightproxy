@@ -55,7 +55,7 @@ ReactDOM.render(
     document.getElementById('app'),
 );
 
-window.onkeydown = function(e) {
+window.onkeydown = function(e: any) {
     const ev: any = window.event || e;
     const code = ev.keyCode || ev.which;
     if (code == 82 && (ev.metaKey || ev.ctrlKey)) {
