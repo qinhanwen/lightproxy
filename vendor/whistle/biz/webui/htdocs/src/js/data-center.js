@@ -851,7 +851,7 @@ function setReqData(item) {
       }
     }
   }
-  
+
   setRawHeaders(req);
   setRawHeaders(res);
   setStyle(item);
@@ -999,6 +999,41 @@ exports.on = function (type, callback) {
   }
 };
 
+window.onkeydown = function(e) {
+  const ev = window.event || e;
+  const code = ev.keyCode || ev.which;
+  if (code == 82 && (ev.metaKey || ev.ctrlKey)) {
+      return false;
+  }
+};
+
+
+window.whistleOn = function (type, callback) {
+  startLoadData();
+  if (type == 'data') {
+    if (typeof callback == 'function') {
+      dataCallbacks.push(callback);
+      callback(networkModal);
+    }
+  } else if (type == 'serverInfo') {
+    if (typeof callback == 'function') {
+      serverInfoCallbacks.push(callback);
+    }
+  } else if (type == 'log') {
+    if (typeof callback == 'function') {
+      logCallbacks.push(callback);
+      callback(logList, svrLogList);
+    }
+  } else if (type === 'plugins' || type === 'settings' || type === 'rules') {
+    if (typeof callback == 'function') {
+      directCallbacks.push(callback);
+    }
+  } else if (type == 'framesUpdate') {
+    if (typeof callback == 'function') {
+      framesUpdateCallbacks.push(callback);
+    }
+  }
+}
 exports.stopNetworkRecord = function(stop) {
   if (!stop && exports.pauseRefresh) {
     networkModal.clearNetwork = false;
